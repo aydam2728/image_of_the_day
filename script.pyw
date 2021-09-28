@@ -4,7 +4,7 @@ import ctypes
 import re
 
 apodurl= "https://api.nasa.gov/planetary/apod?"
-mykey='api_key=dHBo0AWnNFt27udgQo1o5dk6ewzBkDna6SmNMhv0'
+mykey='api_key='
 
 apodurlobj=urllib.request.urlopen(apodurl+mykey)
 
@@ -12,7 +12,7 @@ apodread=apodurlobj.read()
 
 decodeapod=json.loads(apodread.decode("utf-8"))
 
-path="C:\\Users\\lesdm\\Pictures"
+path="C:\\Users\\<user>\\Pictures"
 decodeapod["title"]=re.sub('[!@#$_,.;:]', '', decodeapod["title"])
 
 if "hdurl" in decodeapod :
